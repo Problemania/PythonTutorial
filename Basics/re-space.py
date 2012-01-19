@@ -24,6 +24,7 @@
 #unicodeChars = [unichr(c) for c in range(0xFFFF+1)] # narrow Python build
 import sys
 str = u''.join(unichr(c) for c in xrange(sys.maxunicode+1)) # generic, with sys
+print "sys.maxunicode = ", sys.maxunicode, " = ", hex(sys.maxunicode)
 
 ##
 ## Find characters matching `\s` with `re` module:
