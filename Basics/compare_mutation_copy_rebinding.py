@@ -7,6 +7,8 @@
 ## [1, 2, 3, 4]
 ## [1, 2, 3, 4]
 ## [1, 2, 3, 4]
+## [1, 2, 3, 4]
+## [1, 2, 3, 4]
 ## [1, 2, 3]
 ## [1, 2, 3, 4]
 ## [1, 2, 3]
@@ -14,10 +16,25 @@
 ## Mutation:
 ## a.append(4) mutates the same list object that both a and b were referring to.
 a = [1, 2, 3]
-b = a
+b = a # aliasing b and a, as both now point/refer to the same list object [1,2,3]
 a.append(4)
 print(a)  # output: [1, 2, 3, 4]
 print(b)  # output: [1, 2, 3, 4]
+
+
+## Alternatively, assignment operator such as += can be used to do list mutation
+## in-place:
+## a += [4] uses assignment operator += which combines operator + and assignment =
+## but, it mutates the list object in-place rather than creates a new list object
+## and rebind a:
+##
+a = [1, 2, 3]
+b = a
+# a = a + [4] # uncomment this line and comment the next to see difference   
+a += [4]  # should this line be a = a + [4], b will be left as [1,2,3]
+print(a)  # output: [1, 2, 3, 4]
+print(b)  # output: [1, 2, 3, 4]
+
 
 ##
 ## Making a copy:
